@@ -3,7 +3,7 @@
 [Type Checking in Lean 4](title_page.md)
 [Foreword](foreword.md)
 
-- [What's a kernel?](./whats_a_kernel.md)
+- [カーネルとは何か？](./whats_a_kernel.md)
 - [Trust](./trust/trust.md)
     - [Unsafe declarations](./trust/unsafe_declarations.md)
     - [Adversarial inputs](./trust/adversarial_inputs.md)
