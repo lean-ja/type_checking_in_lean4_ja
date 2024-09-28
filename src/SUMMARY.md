@@ -4,7 +4,7 @@
 [Foreword](foreword.md)
 
 - [カーネルとは何か？](./whats_a_kernel.md)
-- [Trust](./trust/trust.md)
+- [信頼](./trust/trust.md)
     - [Unsafe declarations](./trust/unsafe_declarations.md)
     - [Adversarial inputs](./trust/adversarial_inputs.md)
 - [Export format](./export_format.md)
