@@ -6,7 +6,7 @@
 - [カーネルとは何か？](./whats_a_kernel.md)
 - [信頼](./trust/trust.md)
     - [安全でない宣言](./trust/unsafe_declarations.md)
-    - [Adversarial inputs](./trust/adversarial_inputs.md)
+    - [敵対的な入力](./trust/adversarial_inputs.md)
 - [Export format](./export_format.md)
 - [Kernel concepts](./kernel_concepts/kernel_concepts.md)
     - [The big picture](./kernel_concepts/the_big_picture.md)
