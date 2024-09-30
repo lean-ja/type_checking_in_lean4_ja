@@ -9,3 +9,4 @@
 
 | 用語 |
 | --- |
+| Pollack consistency |
