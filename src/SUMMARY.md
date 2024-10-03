@@ -9,7 +9,7 @@
     - [敵対的な入力](./trust/adversarial_inputs.md)
 - [エクスポートフォーマット](./export_format.md)
 - [カーネルのコンセプト](./kernel_concepts/kernel_concepts.md)
-    - [The big picture](./kernel_concepts/the_big_picture.md)
+    - [全体像](./kernel_concepts/the_big_picture.md)
     - [Clarifying language](./kernel_concepts/clarifying_language.md)
     - [Instantiation and abstraction](./kernel_concepts/instantiation_and_abstraction.md)
     - [Weak and strong reduction](./kernel_concepts/weak_and_strong_reduction.md)
