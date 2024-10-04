@@ -9,4 +9,5 @@
 
 | 用語 |
 | --- |
+| large elimination |
 | Pollack consistency |
