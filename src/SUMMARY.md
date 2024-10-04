@@ -10,7 +10,7 @@
 - [エクスポートフォーマット](./export_format.md)
 - [カーネルのコンセプト](./kernel_concepts/kernel_concepts.md)
     - [全体像](./kernel_concepts/the_big_picture.md)
-    - [Clarifying language](./kernel_concepts/clarifying_language.md)
+    - [言語の明確化](./kernel_concepts/clarifying_language.md)
     - [Instantiation and abstraction](./kernel_concepts/instantiation_and_abstraction.md)
     - [Weak and strong reduction](./kernel_concepts/weak_and_strong_reduction.md)
 - [Names](./names.md)
