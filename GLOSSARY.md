@@ -11,3 +11,4 @@
 | --- |
 | large elimination |
 | Pollack consistency |
+| telescope |
