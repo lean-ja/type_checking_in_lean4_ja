@@ -12,7 +12,7 @@
     - [全体像](./kernel_concepts/the_big_picture.md)
     - [言語の明確化](./kernel_concepts/clarifying_language.md)
     - [インスタンス化と抽象化](./kernel_concepts/instantiation_and_abstraction.md)
-    - [Weak and strong reduction](./kernel_concepts/weak_and_strong_reduction.md)
+    - [弱い簡約と強い簡約](./kernel_concepts/weak_and_strong_reduction.md)
 - [Names](./names.md)
 - [Levels](./levels.md)
 - [Expressions](./expressions/expressions.md)
