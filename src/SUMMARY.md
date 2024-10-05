@@ -13,7 +13,7 @@
     - [言語の明確化](./kernel_concepts/clarifying_language.md)
     - [インスタンス化と抽象化](./kernel_concepts/instantiation_and_abstraction.md)
     - [弱い簡約と強い簡約](./kernel_concepts/weak_and_strong_reduction.md)
-- [Names](./names.md)
+- [名前](./names.md)
 - [Levels](./levels.md)
 - [Expressions](./expressions/expressions.md)
     - [Notes on Implementing Expressions](./expressions/implementing_expressions.md)
