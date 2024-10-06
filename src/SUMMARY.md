@@ -15,7 +15,7 @@
     - [弱い簡約と強い簡約](./kernel_concepts/weak_and_strong_reduction.md)
 - [名前](./names.md)
 - [レベル](./levels.md)
-- [Expressions](./expressions/expressions.md)
+- [式](./expressions/expressions.md)
     - [Notes on Implementing Expressions](./expressions/implementing_expressions.md)
 - [Declarations](./declarations/declarations.md)
     - [The Secret Life of Inductive Types](./declarations/inductive.md)
