@@ -16,7 +16,7 @@
 - [名前](./names.md)
 - [レベル](./levels.md)
 - [式](./expressions/expressions.md)
-    - [Notes on Implementing Expressions](./expressions/implementing_expressions.md)
+    - [式の実装についての注意](./expressions/implementing_expressions.md)
 - [Declarations](./declarations/declarations.md)
     - [The Secret Life of Inductive Types](./declarations/inductive.md)
 - [Type Inference](./type_checking/type_inference.md)
