@@ -135,7 +135,7 @@ Free variables are used to convey information about bound variables in situation
 When an open expression is closed by reconstructing binders, the bindings may have changed, invalidating previously valid deBruijn indices. The use of unique names or deBruijn levels allow this re-closing of binders to be done in a way that compensates for any changes and ensures the new deBruijn indices of the re-bound variables are valid with respect the reconstructed telescope (see [this section](./kernel_concepts.md#implementing-free-variable-abstraction)).
 -->
 
-束縛子を再構築して開いた式を閉じる時、束縛子が変更されることで以前に有効だった de Bruijn インデックスが無効になることがあります。一意な名前か de Bruijn レベルを使用することで、あらゆる変更を補正し、再束縛された変数の新しい de Bruijn インデックスが再構築されたテレスコープに対して有効であることを保証するようにこの束縛子を再度閉じることができます（[この節](./kernel_concepts/instantiation_and_abstraction.md#自由変数の抽象化の実装) を参照してください [^fn1]）
+束縛子を再構築して開いた式を閉じる時、束縛子が変更されることで以前に有効だった de Bruijn インデックスが無効になることがあります。一意な名前か de Bruijn レベルを使用することで、あらゆる変更を補正し、再束縛された変数の新しい de Bruijn インデックスが再構築されたテレスコープに対して有効であることを保証するようにこの束縛子を再度閉じることができます（[この節](../kernel_concepts/instantiation_and_abstraction.md#自由変数の抽象化の実装) を参照してください [^fn1]）
 
 <!--
 Going forward, we may use some form of the term "free variable identifier" to refer to the objects in whatever scheme (unique IDs or deBruijn levels) an implementation may be using.
