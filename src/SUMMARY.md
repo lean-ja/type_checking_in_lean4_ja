@@ -18,7 +18,7 @@
 - [式](./expressions/expressions.md)
     - [式の実装についての注意](./expressions/implementing_expressions.md)
 - [宣言](./declarations/declarations.md)
-    - [The Secret Life of Inductive Types](./declarations/inductive.md)
+    - [帰納型の知られざる一生](./declarations/inductive.md)
 - [Type Inference](./type_checking/type_inference.md)
 - [Definitional Equality](./type_checking/definitional_equality.md)
 - [Reduction](./type_checking/reduction.md)
