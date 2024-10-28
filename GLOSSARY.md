@@ -2,6 +2,7 @@
 
 | 英語 | 日本語 |
 | --- | --- |
+| congruence | 合同 |
 | exporter | エクスポータ |
 | inductive | 帰納的対象（後ろにtypeもdeclaretionもつかない場合） |
 | recursor | 再帰子 |
@@ -11,5 +12,7 @@
 | 用語 |
 | --- |
 | large elimination |
+| locally nameless |
 | Pollack consistency |
+| proof irrelevance |
 | telescope |
