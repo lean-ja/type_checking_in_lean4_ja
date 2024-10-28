@@ -21,6 +21,6 @@
     - [帰納型の知られざる一生](./declarations/inductive.md)
 - [型推論](./type_checking/type_inference.md)
 - [定義上の同値](./type_checking/definitional_equality.md)
-- [Reduction](./type_checking/reduction.md)
+- [簡約](./type_checking/reduction.md)
 - [Open issues & future work](./future_work.md)
 - [Further reading](./further_reading.md)
