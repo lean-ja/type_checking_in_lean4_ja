@@ -22,5 +22,5 @@
 - [型推論](./type_checking/type_inference.md)
 - [定義上の同値](./type_checking/definitional_equality.md)
 - [簡約](./type_checking/reduction.md)
-- [Open issues & future work](./future_work.md)
-- [Further reading](./further_reading.md)
+- [課題と今後の展望](./future_work.md)
+- [その他の記事](./further_reading.md)
