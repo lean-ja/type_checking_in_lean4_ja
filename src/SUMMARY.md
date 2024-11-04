@@ -20,7 +20,7 @@
 - [宣言](./declarations/declarations.md)
     - [帰納型の知られざる一生](./declarations/inductive.md)
 - [型推論](./type_checking/type_inference.md)
-- [定義上の同値](./type_checking/definitional_equality.md)
+- [定義上の等しさ](./type_checking/definitional_equality.md)
 - [簡約](./type_checking/reduction.md)
 - [課題と今後の展望](./future_work.md)
 - [その他の記事](./further_reading.md)

@@ -2,25 +2,25 @@
 # Definitional equality
 -->
 
-# 定義上の同値
+# 定義上の等しさ
 
 <!--
 Definitional equality is implemented as a function that takes two expressions as input, and returns `true` if the two expressions are definitionally equal within Lean's theory, and `false` if they are not.
 -->
 
-定義上の同値は関数として実装されています。これは2つの式を受け取り、それらが Lean の理論の中で定義上等しい場合は `true` を、そうでない場合は `false` を返します。
+定義上の等しさは関数として実装されています。これは2つの式を受け取り、それらが Lean の理論の中で定義上等しい場合は `true` を、そうでない場合は `false` を返します。
 
 <!--
 Within the kernel, definitional equality is important simply because it's a necessary part of type checking. Definitional equality is still an important concept for Lean users who do not venture into the kernel, because definitional equalities are comparatively nice to work with in Lean's vernacular; for any `a` and `b` that are definitionally equal, Lean doesn't need any prompting or additional input from the user to determine whether two expressions are equal.
 -->
 
-カーネル内に置いて定義上の同値は重要なものですが、それは単に型チェックに必要だからです。またカーネル内部へ挑まない Lean ユーザにとっても定義上の同値は重要な概念です。というのも定義上の同値は Lean を書く上で比較的簡単に扱えるからです；定義上等しい `a` と `b` に対して、Lean は2つの式が等しいかどうかを判断するためにユーザからのプロンプトや追加の入力を必要としません。
+カーネル内において定義上の等しさは重要なものですが、それは単に型チェックに必要だからです。またカーネル内部へ挑まない Lean ユーザにとっても定義上の等しさは重要な概念です。というのも定義上の等しさは Lean を書く上で比較的簡単に扱えるからです；定義上等しい `a` と `b` に対して、Lean は2つの式が等しいかどうかを判断するためにユーザからのプロンプトや追加の入力を必要としません。
 
 <!--
 There are two big-picture parts of implementing the definitional equality procedure. First, the individual tests that are used to check for different definitional equalities. For readers who are just interested in understanding definitional equality from the perspective of an end user, this is probably what you want to know.
 -->
 
-定義上の同値の処理を実装には大きく分けて2つの部分があります。まず、定義が等しいかどうかをチェックするための個別のテストです。エンドユーザの視点から定義上の同値を理解することに興味がある読者にとっては、おそらくこれが知りたいことでしょう。
+定義上の等しさの処理を実装には大きく分けて2つの部分があります。まず、定義が等しいかどうかをチェックするための個別のテストです。エンドユーザの視点から定義上の等しさを理解することに興味がある読者にとっては、おそらくこれが知りたいことでしょう。
 
 <!--
 Readers interested in writing a type checker should also understand how the individual checks are composed along with reduction and caching to make the problem tractable; naively running each check and reducing along the way is likely to yield unacceptable performance results.
@@ -82,7 +82,7 @@ defEq (Const n xs) (Const m ys):
 For implementations using a substitution-based strategy like locally nameless (if you're following the C++ or lean4lean implementations, this is you), encountering a bound variable is an error; bound variables should have been replaced during weak reduction if they referred to an argument, or they should have been replaced with a free variable via strong reduction as part of a definitional equality check for a pi or lambda expression.
 -->
 
-locally nameless のような置換ベースの戦略を使用している場合（もし C++ や lean4lean の実装に従っているならあなたのことです）、束縛変数に遭遇するとエラーになります；というのも束縛変数はそれが引数を参照している場合、弱い簡約を行う中で置換されるか、pi またはラムダ式の定義上の同値チェックの一部として強い簡約を介して自由変数に置換されるべきです。
+locally nameless のような置換ベースの戦略を使用している場合（もし C++ や lean4lean の実装に従っているならあなたのことです）、束縛変数に遭遇するとエラーになります；というのも束縛変数はそれが引数を参照している場合、弱い簡約を行う中で置換されるか、pi またはラムダ式の定義上の等しさのチェックの一部として強い簡約を介して自由変数に置換されるべきです。
 
 <!--
 For closure-based implementations, look up the elements corresponding to the bound variables and assert that they are definitionally equal.
@@ -100,7 +100,7 @@ For closure-based implementations, look up the elements corresponding to the bou
 Two free variables are definitionally equal if they have the same identifier (unique ID or deBruijn level). Assertions about the equality of the binder types should have been performed wherever the free variables were constructed (like the definitional equality check for pi/lambda expressions), so it is not necessary to re-check that now.
 -->
 
-2つの自由変数が定義上等しいのは、同じ識別子（一意な ID か de Bruijn レベル）を持っている場合です。束縛子の型が等しいかどうかの検証は、（pi ・ラムダ式の定義上の同値チェックと同じように）自由変数が構築された場所で必ず行われたはずなので、今更再チェックする必要はありません。
+2つの自由変数が定義上等しいのは、同じ識別子（一意な ID か de Bruijn レベル）を持っている場合です。束縛子の型が等しいかどうかの検証は、（pi ・ラムダ式の定義上の等しさのチェックと同じように）自由変数が構築された場所で必ず行われたはずなので、今更再チェックする必要はありません。
 
 ```
 defEqFVar (id1, _) (id2, _):
@@ -175,7 +175,7 @@ defEq (Lambda s a) (Lambda t b)
 Lean recognizes definitional equality of two elements `x` and `y` if they're both instances of some structure type, and the fields are definitionally equal using the following procedure comparing the constructor arguments of one and the projected fields of the other:
 -->
 
-Lean は2つの要素 `x` と `y` が両方ともある構造体型のインスタンスであり、一方のコンストラクタ引数と他方の射影されたフィールドを比較する以下の手順を使用してフィールドが定義上等しい場合、定義上の同値を認めます：
+Lean は2つの要素 `x` と `y` が両方ともある構造体型のインスタンスであり、一方のコンストラクタ引数と他方の射影されたフィールドを比較する以下の手順を使用してフィールドが定義上等しい場合、定義上の等しさを認めます：
 
 <!--
 ```
@@ -245,7 +245,7 @@ Lean では以下の条件の下にある2つの要素 `x: S p_0 .. p_N` と `y:
 Intuitively this definitional equality is fine, because all of the information that elements of these types can convey is captured by their types, and we're requiring those types to be definitionally equal.
 -->
 
-直観的にこの定義上の同値は良いでしょう。なぜなら、これらの型の要素が伝えることのできる情報はすべて型に捕捉されており、私たちはこれらの型が定義上等しいことを要求しているからです。
+直観的にこの定義上の等しさは問題ないでしょう。なぜなら、これらの型の要素が伝えることのできる情報はすべて型に捕捉されており、私たちはこれらの型が定義上等しいことを要求しているからです。
 
 <!--
 ## Eta expansion
@@ -264,7 +264,7 @@ defEqEtaExpansion x y : bool :=
 The lambda created on the right, `(fun _ => $0) y` trivially reduces to `y`, but the addition of the lambda binder gives the `x` and `y'` a chance to match with the rest of the definitional equality procedure.
 -->
 
-右辺でラムダ式が作られており、この `(fun _ => $0) y` は明らかに `y` に簡約されますが、ラムダ式の束縛子を追加することで、 `x` と `y` が残りの定義上の同値の手続きによる一致の機会を与えます。
+右辺でラムダ式が作られており、この `(fun _ => $0) y` は明らかに `y` に簡約されますが、ラムダ式の束縛子を追加することで、 `x` と `y` が残りの定義上の等しさの手続きによる一致の機会を与えます。
 
 <!--
 ## Proof irrelevant equality
@@ -276,7 +276,7 @@ The lambda created on the right, `(fun _ => $0) y` trivially reduces to `y`, but
 Lean treats proof irrelevant equality as definitional. For example, Lean's definitional equality procedure treats any two proofs of `2 + 2 = 4` as definitionally equal expressions.
 -->
 
-Lean は proof irrelevance な同値を定義上のものとして扱います。例えば、Lean の定義上の同値の手続きは `2 + 2 = 4` についての任意の2つの証明を定義上同値として扱います。
+Lean は proof irrelevance な同値を定義上のものとして扱います。例えば、Lean の定義上の等しさの手続きは `2 + 2 = 4` についての任意の2つの証明を定義上同値として扱います。
 
 If a type `T` infers as `Sort 0`, we know it's a proof, because it is an element of `Prop` (remember that `Prop` is `Sort 0`).
 
@@ -349,7 +349,7 @@ To illustrate, the string literal "ok", which uses two characters corresponding 
 The available kernel implementations implement a "lazy delta reduction" procedure as part of the definitional equality check, which unfolds definitions lazily using [reducibility hints](./declarations.md#reducibility-hints) and checks for congruence when things look promising. This is a much more efficient strategy than eagerly reducing both expressions completely before checking for definitional equality.
 -->
 
-利用可能なカーネル実装は [簡約のヒント](./declarations.md#reducibility-hints) を使用して遅延的に定義を展開し、物事が有望に見えるときに一致をチェックする定義上の同値チェックの一部として「Lazy delta 簡約」手順を実装しています。これは定義が一致するかどうかをチェックする前に両方の式を完全に簡約するよりもはるかに効率的な戦略です。
+利用可能なカーネル実装は [簡約のヒント](./declarations.md#reducibility-hints) を使用して遅延的に定義を展開し、物事が有望に見えるときに一致をチェックする定義上の等しさのチェックの一部として「Lazy delta 簡約」手順を実装しています。これは定義が一致するかどうかをチェックする前に両方の式を完全に簡約するよりもはるかに効率的な戦略です。
 
 <!--
 If we have two expressions `a` and `b`, where `a` is an application of a definition with height 10, and `b` is an application of a definition with height 12, the lazy delta procedure takes the more efficient route of unfolding `b` to try and get closer to `a`, as opposed to unfolding both of them completely, or blindly choosing one side to unfold.

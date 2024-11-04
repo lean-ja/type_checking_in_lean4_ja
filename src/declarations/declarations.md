@@ -160,7 +160,7 @@ Definition, theorem, and opaque are interesting in that they both a type and a v
 In the case of a theorem, the `declarationInfo`'s type is what the user claims the type is, and therefore what the user is claiming to prove, while the value is what the user has offered as a proof of that type. Inferring the type of the received value amounts to checking what the proof is actually a proof of, and the definitional equality assertion ensures that the thing the value proves is actually what the user intended to prove.
 -->
 
-定理の場合、`declarationInfo` の型はユーザが主張する型であり、したがってユーザが証明することを主張しているもので、値はユーザによってその型の証明を提供されるものです。受け取った値の型を推論することは、その証明が実際に何を証明しているかをチェックすることに等しく、定義上の同値のチェックはその値が証明する事柄が実際にユーザが証明しようと意図したものであることを保証します。
+定理の場合、`declarationInfo` の型はユーザが主張する型であり、したがってユーザが証明することを主張しているもので、値はユーザによってその型の証明を提供されるものです。受け取った値の型を推論することは、その証明が実際に何を証明しているかをチェックすることに等しく、定義上の等しさのチェックはその値が証明する事柄が実際にユーザが証明しようと意図したものであることを保証します。
 
 <!--
 #### Reducibility hints

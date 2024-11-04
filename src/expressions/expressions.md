@@ -323,12 +323,12 @@ Lean のカーネルはオプションとして任意精度の Nat リテラル�
 String literals are lazily converted to lists of characters for testing definitional equality, and when they appear as the major premise in reduction of a recursor.
 -->
 
-文字列リテラルは、定義上の同値をテストするためか、再帰子の簡約において主要な対象として現れる時に文字のリストに遅延変換されます。
+文字列リテラルは、定義上の等しさをテストするためか、再帰子の簡約において主要な対象として現れる時に文字のリストに遅延変換されます。
 
 <!--
 Nat literals are supported in the same positions as strings (definitional equality and major premises of a recursor application), but the kernel also provide support for addition, multiplication, exponentiation, subtraction, mod, division, as well as boolean equality and "less than or equal" comparisons on nat literals.
 -->
 
-自然数リテラルは文字列を同じ立ち位置（定義上の同値と再帰子の適用の主要な対象）でサポートされていますが、カー熱は加算・乗算・指数・減算・剰余・割り算のほか、自然数リテラルに対する真偽値の同値と「以下」の比較もサポートしています。
+自然数リテラルは文字列を同じ立ち位置（定義上の等しさと再帰子の適用の主要な対象）でサポートされていますが、カー熱は加算・乗算・指数・減算・剰余・割り算のほか、自然数リテラルに対する真偽値の同値と「以下」の比較もサポートしています。
 
 [^fn1]: 訳注：原文では`./kernel_concepts.md#implementing-free-variable-abstraction`へリンクが貼られていましたがリンクが切れていたので対応するリンクに更新しています。
