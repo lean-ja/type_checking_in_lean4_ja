@@ -50,7 +50,7 @@ The kernel is an implementation of Lean's logic in software; a computer program 
 + Core operations used in type checking, including type inference, reduction, and definitional equality checking.
 -->
 
-+ 型推論・簡約・定義上の同値（definitional equality）など、型検査で用いられる中核的な操作。
++ 型推論・簡約・定義上の等しさ（definitional equality）など、型検査で用いられる中核的な操作。
 
 <!--
 + Functionality for manipulating and checking inductive type declarations. For example, generating a type's recursors (elimination rules), and checking whether a type's constructors agree with the type's specification.
@@ -86,7 +86,7 @@ In section 1.2.3 of the [_Certified Programming with Dependent Types_](http://ad
 Lean's kernel is small enough that developers can write their own implementation and independently check proofs in Lean by using an exporter[^1]. Lean's export format contains contains enough information about the exported declarations that users can optionally restrict their implementation to certain subsets of the full kernel. For example, users interested in the core functionality of inference, reduction, and definitional equality may opt out of implementing the functionality for checking inductive specifications.
 -->
 
-Lean のカーネルは十分に小さいため、開発者は独自の実装を書くことができ、エクスポータ [^1] を使うことで独自に Lean の証明をチェックすることができます。Lean のエクスポートフォーマットには、エクスポートされた宣言に関する十分な情報が含まれているため、ユーザはオプションで実装をカーネル全体の特定のサブセットに限定することができます。例えば、推論・簡約・定義上の同値のコア機能に興味のあるユーザは帰納的な仕様のチェック機能の実装を省略することができます。
+Lean のカーネルは十分に小さいため、開発者は独自の実装を書くことができ、エクスポータ [^1] を使うことで独自に Lean の証明をチェックすることができます。Lean のエクスポートフォーマットには、エクスポートされた宣言に関する十分な情報が含まれているため、ユーザはオプションで実装をカーネル全体の特定のサブセットに限定することができます。例えば、推論・簡約・定義上の等しさのコア機能に興味のあるユーザは帰納的な仕様のチェック機能の実装を省略することができます。
 
 <!--
 In addition to the list of items above, external type checkers will also need a parser for [Lean's export format](./export_format.md), and a pretty printer, for input and output respectively. The parser and pretty printer are not part of the kernel, but they are important if one wants to have interesting interactions with the kernel.
