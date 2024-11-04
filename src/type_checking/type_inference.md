@@ -32,7 +32,7 @@ We will also look at a number of additional correctness assertions that Lean's k
 If you're following Lean's implementation and using the locally nameless approach, you should not run into bound variables during type inference, because all open binders will be instantiated with the appropriate free variables.
 -->
 
-Lean の実装に従ってローカルに名前を持たないアプローチを使う場合、型推論中で束縛変数に遭遇することはないでしょう。というのもすべての開いた束縛子は適切な自由変数でインスタンス化されているからです。
+Lean の実装に従って locally nameless なアプローチを使う場合、型推論中で束縛変数に遭遇することはないでしょう。というのもすべての開いた束縛子は適切な自由変数でインスタンス化されているからです。
 
 <!--
 When we come across a binder, we need to traverse into the body to determine the body's type. There are two main approaches one can take to preserve the information about the binder type; the one used by Lean proper is to create a free variable that retains the binder's type information, replace the corresponding bound variables with the free variable using instantiation, and then enter the body. This is nice, because we don't have to keep track of a separate piece of state for a typing context.
